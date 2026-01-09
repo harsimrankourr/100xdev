@@ -15,7 +15,11 @@ function findSum(n){
 }
 
 function findSumTill100(){
-    return findSum(100);
+    console.log(findSum(100));
 }
+
+//Calling an Async function
+//function will called after 1000 miliseconds 
+
 setTimeout(findSumTill100, 1000)
 console.log ("hello world")
