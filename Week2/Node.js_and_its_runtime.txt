@@ -1,0 +1,53 @@
+ECMAScript 
+it is a scripting language specification on which JavaScript is based.
+It is standardized by ECMA international in the ECMA-262 and ISO/IEC 16262
+document.
+it serves as the guideline or the rules for scripting language design.
+There are some things in ECMAScript that every JavaScript compiler should supoort 
+There are many versions of ECMAScript.
+
+JavaScript most widely known and used implementation of ECMAScript
+JavaScript includes additional features that are not part of ECMAScript specification
+like document object model(DOM) manipulation, which is crucial for web development
+but is not defined by ECMAScript
+
+like setTimeout, fs.readfile(These are from web API's)
+===============================================================================================
+
+What is JavaScript?
+
+Common JS browser engines
+
+1.V8 - used by google chrome - Common
+  http://githhub.com/v8/v8
+
+  v8 engine is an open source JavaScript engine developed by the chromium
+  project for google chrome and chromium web browser. It's written in C++
+  and is responsible for compiling JavaScript code into native machine code before executing
+  it, which greatly improve performance.
+
+2.SpiderMonkey - used by Firefox - C + rust
+  https://spidermonkey.dev/
+
+JavaScript was initially used for functionality  of a web on the brower 
+JavaScript was only used in the browser 
+for backend Java was used 
+
+So why people should know two different languages?
+
+so a runtime environment was required to execute javaScript outside the browser
+It was node.js
+===========================================================================================
+
+What is node.js?
+
+node.js isn't a language 
+It is a runtime. 
+It took out v8 engine.
+
+
+
+
+
+
+
