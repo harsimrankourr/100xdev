@@ -44,6 +44,23 @@ What is node.js?
 node.js isn't a language 
 It is a runtime. 
 It took out v8 engine.
+It's writtenn in C C++
+=======================================================================
+
+What is Bun?
+
+other than the fact that Js is single threaded,
+Node.js is slow (multiple reason for it)
+some smart people said they wanted to re-write 
+the JS runtime for the backend and introduced Bun 
+
+It is a significantly faster runtime 
+
+It is written in Zig
+
+https://github.com/over-sh/Bun
+
+
 
 
 
