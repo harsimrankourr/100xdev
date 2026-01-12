@@ -92,9 +92,43 @@ things server needs to worry about
 
 protocol://URL/Route
 https://chat.openai.com/backend-api/conversation
- 
 
+==================================================================================
 
+1.Browser parses the URL
+2.Does a DNS lookup(Domain name Service resolution)(Converts google.com to an IP)
+3.Establish a connection to IP (does hanndshake)
+
+-->>>>>  What is DNS resolution?
+
+URL's are just like contacts in your phone
+In the end they are map to an IP
+If you ever buy a URL of your own, you will need to point it    
+to the IP of your server.
+
+===========================================================================
+
+-->>>>>> things thet happen on your server after request is recieved
+
+1. You get the inputs(route, body, headers)
+2. You do some logics on the input, calculate the output.
+3. You return the output body, headers and status code
+
+============================================================================
+
+What are the common methods you can send to your backend server?
+    1. get
+    2. POST
+    3. PUT
+    4. DELETE
+
+============================================================================
+
+What are the common status codes the backend responds with?
+    1. 200 - Everything is ok
+    2. 404 - Page/route not found
+    3. 403 - Authentication issue
+    4. 500 - Internal server error
 
 
 
