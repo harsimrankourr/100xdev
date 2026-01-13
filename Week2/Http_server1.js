@@ -18,3 +18,11 @@ app.get('/Signup', function(req, res)  {
 app.listen(port, function()  {
   console.log(`Example app listening on port ${port}`)
 })
+
+//create a todo app that lets user store todos on the server
+//try to create a http server from scratch in c 
+//create an http server in rust using actix web
+//create an http server in golang using the gurrila framework
+//spring boot java
+
+//AWS is a firebare which does not have server 
