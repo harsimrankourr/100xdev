@@ -28,15 +28,8 @@ app.listen(port, function()  {
 const express = require('express')
 const bodyParser = require("body-parser");
 const app = express()
-const port = 3000
-
-//Middlewares
-app.use(bodyParser.json());
-
-app.get('/', function(req, res)  {
-    console.log(req.body);
-  res.send('Hello World!')
-})
+const port = process.env.POST || 3000
+app.use(express.json());
 
 app.post('/backend-api/conversation', function(req, res){
     const message = req.body.message;
