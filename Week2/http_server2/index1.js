@@ -43,3 +43,15 @@ app.post('/backend-api/conversation', function(req, res){
 app.listen(port, function()  {
   console.log(`Example app listening on port ${port}`)
 })
+
+//for exporting environment variables use 
+//"set PORT=3035" command in window
+//use "export PORT=3035" in mac
+
+/*
+npm is node package manager 
+it means installing packages for use 
+
+npx means only use of the packages 
+but not installing them
+*/
