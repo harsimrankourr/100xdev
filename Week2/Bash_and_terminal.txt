@@ -1,13 +1,16 @@
 Bash 
     1.pwd
-    2.cd
-    3.ls
-    4.mkdir
-    5.touch
-    6.cat
-    7.vi
-    8.mv
-    9.cp
+    2.cd - change directory
+    3.ls - list content 
+    4.mkdir - make directory (for creating new folder)
+    5.touch - for creating a new file in the folder
+    6.cat - (prints the content of a file)
+    7.vi - (this is the way to edit files directly from the terminal)
+        to come out of this press
+            Escape, colon, q, ! (it is exiting without saving)
+            Escape, colon, w, q, ! (it is exiting by saving)
+    8.mv - (move file from one foldrer to another)
+    9.cp - 
     10.nvm
     11.npm
     12.node
