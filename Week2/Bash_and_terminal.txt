@@ -10,7 +10,8 @@ Bash
             Escape, colon, q, ! (it is exiting without saving)
             Escape, colon, w, q, ! (it is exiting by saving)
     8.mv - (move file from one foldrer to another)
-    9.cp - 
-    10.nvm
-    11.npm
-    12.node
+    9.cp - copy files
+    10.nvm - node version manager
+    11.npm 
+    12.node - can write a node.js code after this command
+    
