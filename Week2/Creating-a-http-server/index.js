@@ -38,3 +38,7 @@ app.get("/", function(req, res){
 
 app.listen(3000);
 
+//how to reach there
+//localhost:3000/?n=30
+//type this in browser
+
