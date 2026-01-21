@@ -117,6 +117,17 @@ app.get("/", function(req, res){
         numberOfHealthyKidneys,
         numberOfUnhealthyKidneys
     })
+
+    app.post("/", function(req, res){
+        const ishealthy = req.body.ishealthy;
+        users[0].kidneys.push({
+            healthy: ishealthy
+        })
+        res.json({
+            msg: "Done!"
+        })
+    })
+
     console.log(johnKidneys)
 })
 
