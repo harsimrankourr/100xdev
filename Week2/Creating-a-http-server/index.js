@@ -17,6 +17,7 @@ app.get("/", function(req, res){
 app.listen(3001);
 
 */
+//========================================================================
 
 /*
 const express = require("express")
@@ -39,11 +40,15 @@ app.get("/", function(req, res){
 
 app.listen(3000);
 */
+//======================================================================
 
 //how to reach there
 //localhost:3000/?n=30
 //type this in browser
 
+//======================================================================
+
+/*
 const express = require("express")
 
 function calculateSum(n){
@@ -63,6 +68,8 @@ app.get("/", function(req, res){
 })
 
 app.listen(3000);
+*/
+//=======================================================================
 
 /*
 REQUESTS METHODS(examples)
@@ -80,3 +87,37 @@ STATUS CODES
     4. 411- inputs  were incorrect, wrong person come to surgery
     5. 403- you are not allowed
 */
+//======================================================================
+
+const express = require("express");
+const app = express();
+
+var users = [{
+    name: 'John',
+    kidneys: [{
+        healthy: false
+    },{
+        healthy: true
+    }]
+}]
+
+app.get("/", function(req, res){
+    const johnKidneys = users[0].kidneys;
+    const numberOfKidneys = johnKidneys.length;
+    let numberOfHealthyKidneys = 0;
+    for(let i= 0; i<johnKidneys.length; i++){
+        if(johnKidneys[i].healthy){
+            numberOfHealthyKidneys = numberOfHealthyKidneys+1;
+        }
+    }
+
+    const numberOfUnhealthyKidneys = numberOfKidneys - numberOfHealthyKidneys; 
+    res.json({
+        johnKidneys,
+        numberOfHealthyKidneys,
+        numberOfUnhealthyKidneys
+    })
+    console.log(johnKidneys)
+})
+
+app.listen(3000);
