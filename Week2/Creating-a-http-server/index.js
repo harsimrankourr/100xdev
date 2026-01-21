@@ -67,9 +67,15 @@ app.listen(3000);
 /*
 REQUESTS METHODS(examples)
     1.GET- going for a consultation to get a check up
-    2.POST- going to get a new kidney innserted
-    3.PUT- going to get a kidney replacement
+    2.POST- going to get a new kidney inserted (new)
+    3.PUT- going to get a kidney replacement (updation)
     4.DELETE- going to get a kidney removed 
 */
 
-
+/*
+STATUS CODES
+    1. 200- Everything is ok
+    2. 404- Doctor is not in the hospital
+    3. 500- Mid surgery light went away
+    4. 411- inputs  were incorrect, wrong person come to surgery
+*/
