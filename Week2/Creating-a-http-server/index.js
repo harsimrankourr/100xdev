@@ -64,4 +64,12 @@ app.get("/", function(req, res){
 
 app.listen(3000);
 
+/*
+REQUESTS METHODS(examples)
+    1.GET- going for a consultation to get a check up
+    2.POST- going to get a new kidney innserted
+    3.PUT- going to get a kidney replacement
+    4.DELETE- going to get a kidney removed 
+*/
+
 
