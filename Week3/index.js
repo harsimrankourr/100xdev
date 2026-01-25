@@ -43,6 +43,7 @@ app.listen(3000);
 
 //USING MIDDLEWARES
 
+/*
 const express = require("express");
 const app = express();
 
@@ -81,4 +82,23 @@ function UserMiddleware(req, res, next){
     });
 }
 
-app.listen(3000)
+app.listen(3000);
+*/
+
+//===========================================================================
+
+const express = require("express");
+
+const app = express();
+
+app.get("/health-checkup", function(req, res, next){
+    console.log("hi from req1")
+    next();
+}, function(req, res, next){
+    console.log("hi from req2")
+}, function (req, res){
+    console.log("hi from req2")
+    res.send("hello world");
+});
+
+app.listen(3000);
