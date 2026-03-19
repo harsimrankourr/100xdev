@@ -66,15 +66,11 @@ function UserMiddleware(req, res, next){
         }
     };
 
-    app.get("/health-check-ups, userMiddleware, kidneyMiddleware", function(req, res){
+    app.get("/health-check-ups", userMiddleware, kidneyMiddleware, function(req, res){
 
         res.send("your heart is healthy");
     });
-
-    app.get("/kidney-check-ups, userMiddleware, kidneyMiddleware", function(req, res){
-
-        res.send("your heart is healthy");
-    });
+ 
 
     app.get("/heart-check-ups", userMiddleware, function(req, res) {
 
@@ -87,6 +83,7 @@ app.listen(3000);
 
 //===========================================================================
 
+/*
 const express = require("express");
 
 const app = express();
@@ -100,5 +97,32 @@ app.get("/health-checkup", function(req, res, next){
     console.log("hi from req2")
     res.send("hello world");
 });
+
+app.listen(3000);
+
+*/
+
+//=============================================================================
+
+const express = require("express");
+
+const app = express();
+
+app.use(express.json());
+
+app.post("/health-checkup", function(req, res){
+
+    const kidneys = req.body.kidneys;
+    const kidneyLength = kidneys.length;
+    res.send("you have" + kidneyLength + "kidneys");
+});
+
+//global catches
+app.use(function(err, req, res, next){
+    errorCount++;
+    res.json({
+        msg: "sorry something is up with our server "
+    })
+})
 
 app.listen(3000);
