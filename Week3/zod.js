@@ -9,7 +9,7 @@ const express = require("express");
 const z = require("zod");
 const app = express();
 
-app.use(express.jsonn())
+app.use(express.json())
 
 const kidneyInput = z.literal("1").or(z.literal("2"));
 
