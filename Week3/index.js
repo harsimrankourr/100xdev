@@ -43,7 +43,7 @@ app.listen(3000);
 
 //USING MIDDLEWARES
 
-/*
+
 const express = require("express");
 const app = express();
 
@@ -79,7 +79,6 @@ function UserMiddleware(req, res, next){
 }
 
 app.listen(3000);
-*/
 
 //===========================================================================
 
