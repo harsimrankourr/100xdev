@@ -21,3 +21,13 @@ function sum(a, b) {
 }
 const value = calculateArithmatic(1, 2, sum);
 console.log(value);
+
+//=====================================================
+
+//Set Timeout
+
+function greet(){
+    console.log("It take 3 seconds to print");
+}
+
+setTimeout(GPUExternalTexture, 3*1000)
