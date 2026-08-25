@@ -3,8 +3,8 @@ Languages are used to write the applications
 Developers write high level codes in these languages.
 Every language has a compiler which convert the developer code into 0’s and 1’s
 C++ is a compiled language 
-It means first it converts its high level code into a binary t
-Hen you can run binary distributed 
+It means first it converts its high level code into a binary 
+then you can run binary distributed 
 JavaScript is a Interpreted language 
 It does not convert a js file into a binary first 
 
