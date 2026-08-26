@@ -40,19 +40,19 @@ Calling site after thet
 
 const fs = require('node:fs');
 
-function HarsimranReadFile(){
+function HarsimranReadFile() {
     console.log("inside harsimransreadfile");
-    return new Promise(function(resolve){
+    return new Promise(function (resolve) {
         console.log("inside promise");
-        fs.readFile("a.txt", "utf-8", function(err, data){
+        fs.readFile("a.txt", "utf-8", function (err, data) {
             console.log("before resolve");
             resolve(data);
         });
-     })
+    })
 }
 
 //Callback function to call
-function onDone(data){
+function onDone(data) {
     console.log(data)
 }
 
@@ -74,5 +74,28 @@ function callback(){
 console.log(d);
 d.then(callback)
 */
+
+//===================================================================
+
+//using callbacks
+
+function myOwnSetTimeout(callback, duration) {
+    setTimeout(function () {
+        callback()
+    }, duration);
+}
+
+//using promises
+
+function promisifiedOwnSetTimeout(duration) {
+    const p = new Promise(function (resolve) {
+        setTimeout(function () {
+            resolve();
+        }, duration);
+    });
+    return p;
+
+}
+
 
 
