@@ -1,6 +1,11 @@
 //Async await is also a syntatic sugar 
 //no callbacks and no .then syntax 
 
+// If we want our asynchronous function to bahave like a synchronous function 
+// We mark async function as await 
+
+//By this we provide sequential behaviour to our asynchronous fuction 
+
 function harsimransAsyncfunction(){
     let p = new Promise(function(resolve){
         //do some async logic here
