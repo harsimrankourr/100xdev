@@ -1,0 +1,16 @@
+Js browser architecture contains the following 
+     
+     - Callstacks
+     - Web API's
+     - Callback queues
+
+Call stacks - What is being called next.
+            the line of code that is running now
+
+Web API's - The task is delegated for a while is shown here 
+
+Callbak queues - The task is done but waiting beacuse that was delegated during the process
+                Once the belowing task will completed this will done and shown in output
+
+
+//REFER NOTES FROM NOTEBOOK
