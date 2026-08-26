@@ -6,6 +6,8 @@
  by doing context switching and deligating.
  */
 
+// JS CAN DELEGATE AND CONTEXT SWITCH BY USING ASYNCHRONOUS FUNCTIONS
+
  //============================================================
  //Set time out Asynchronous function
 
