@@ -1,5 +1,13 @@
-//Promises are synntactical sugar that make this code slightly more readable
-//there is no use of callbacks in promises
+// Promises are synntactical sugar that make this code slightly more readable
+// There is no use of callbacks in promises
+// Promises are used to create our own asynchronous functions.
+
+//The promise object represents the eventual completion of an asynchronous operation and its resulting value.
+
+//This lets asynchronous method value like synchronous method
+
+// Promise in a function can return synchronously
+// But the data of the promise can return asynchronously 
 
 /*
 let p = new Promise (function(resolve){
