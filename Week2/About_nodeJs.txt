@@ -1,0 +1,43 @@
+ECMA SCRIPT
+
+    - ECMA script is a scripting language specification on which java script is based. 
+    - It served as the guidelines or the rules for scripting language design
+
+Versions of ECMA script 
+
+    ES5, ES6, ES2015, ES2017
+
+Java  script is a scripting language that conforms to the ECMA script specifications 
+Java script is the most widely known and used implementation of ECMA script 
+
+Beyond ECMA script 
+
+    - Java script includes additional features that are not part of the ECMA script specifications 
+       like DOM(Document object models)
+
+being in the frontend ECMA script don't provide setTimeout and fs.readile
+Javascript and node js provides us both
+
+V8 compiler of google chrome is used to compile javascript 
+SpiderMonkey used by firefox - C+Rust 
+
+Earlier javascript was the only language only meant for the Browser
+For backend Java and Golang were used 
+SO it was thought that let V8 come out of the browser and javascript let run outside the browser and then '
+
+
+Node.js was  used for backend 
+
+Node.js is a runtime
+
+It means it is something that runs javascript out of the browser
+
+Node.js is written in C/C++
+
+Some wants to reWrite the JS runtime for the backend and Introduce BUN
+It is significantly faster runtime 
+It is written in ZIG
+
+
+Java script is used for front end and 
+Node.js is used for backend 
