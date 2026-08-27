@@ -134,3 +134,49 @@ promisifiedOwnSetTimeout(1000).then(function(){
     console.log("second one done")
 });
 
+
+//=================================================================
+
+function sumOfSquares(a,b, fn){
+    let value1 = a*a;
+    let value2 = b*b;
+    fn(value1+value2);
+}
+
+sumOfSquares(1,2,function(value){
+    console.log(value);
+})
+
+sumOfSquares(1,2).then(function(value){
+    console.log(value);
+})
+
+//==================================================================
+
+// Steps of execution of a promisified function
+
+console.log("at the top 1")
+
+function promisifiedTimeout(){
+
+    console.log("function called 3")
+
+    return newPromise(function(resolve){
+
+        console.log("inside promise callback 4")
+
+        setTimeout(function(){
+
+            console.log("setTimeout called 5")
+
+            resolve("done baby! I am burnt out.");
+        }, 5000);
+    });
+}
+
+console.log("in the middle 2")
+
+promisifiedTimeout(). then(function(value){
+    console.log("promisified then 6")
+    console.log(value);
+});
