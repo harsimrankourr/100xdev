@@ -3,6 +3,10 @@ There are many libraries that let you create HTTP server
 The most famous one is express
 */
 
+//All the machines near me may have different IP's, A router of us all may have public address 
+// but we individually don't have public address
+// We can access each other's machine by private IP's
+
 const express = require('express')
 const app = express()
 const port = 3000
