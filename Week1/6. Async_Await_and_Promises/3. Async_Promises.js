@@ -84,6 +84,10 @@ function myOwnSetTimeout(callback, duration) {
         callback()
     }, duration);
 }
+myOwnSetTimeout(function()
+{
+
+}, 1000)
 
 //using promises
 
@@ -97,5 +101,36 @@ function promisifiedOwnSetTimeout(duration) {
 
 }
 
+//===================================================================
 
+//Creating a promise 
+function promisifiedOwnSetTimeout(duration) {
+    const p = new Promise(function (resolve) {
+        setTimeout(function () {
+            resolve();
+        }, duration);
+    });
+    return p;
+
+}
+
+//Calling a promisified function
+
+// promisifiedOwnSetTimeout(1000).then(function(){
+//     console.log("first is done"); 
+//     // Callback hell
+//     promisifiedOwnSetTimeout(2000).then(function(){
+//         console.log("second one done");
+//     });
+// })
+
+//Promise channing is used to get rid of callback hell
+
+promisifiedOwnSetTimeout(1000).then(function(){
+    console.log("first is done"); 
+    // Promise channing
+    return promisifiedOwnSetTimeout(2000)
+}).then (function(){
+    console.log("second one done")
+});
 
