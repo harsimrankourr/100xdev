@@ -1,3 +1,5 @@
+// A server can host multiple applications, and multiple domains can point to the same server.
+
 /*
 const express = require('express')
 const bodyParser = require("body-parser");
@@ -24,6 +26,8 @@ app.listen(port, function()  {
 //here port is 3000
 //if there is not any existing posrt
 //by default its port is 443
+
+//Bodyparser is basically used to access req.body
 
 const express = require('express')
 const bodyParser = require("body-parser");
