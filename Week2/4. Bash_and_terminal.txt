@@ -1,4 +1,6 @@
 Bash 
+
+BAsh is a commandline interpreter language which lets us interact with our operating system 
     1.pwd - print working directory
     2.cd - change directory
     3.ls - list content 
