@@ -1,5 +1,5 @@
 Bash 
-    1.pwd
+    1.pwd - print working directory
     2.cd - change directory
     3.ls - list content 
     4.mkdir - make directory (for creating new folder)
