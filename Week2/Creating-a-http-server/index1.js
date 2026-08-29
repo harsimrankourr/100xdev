@@ -6,7 +6,7 @@ var users = [{
     kidneys: [{
         healthy: false
     }, {
-        healthy: true
+        unhealthy: true
     }]
 }]
 
