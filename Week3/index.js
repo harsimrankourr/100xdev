@@ -2,7 +2,7 @@
     // 1. authentication
     // 2. input validation 
 
-//no middlewares 
+// middlewares can do these two in the best way 
 
 //======================================================================
 
@@ -61,7 +61,7 @@ function UserMiddleware(req, res, next){
             res.status(403).json({
                 msg: "incorrect inputs",
             });
-        }else{
+        }else{ 
             next();
         }
     };
@@ -129,6 +129,12 @@ app.listen(3000);
 */
 
 //GLOBAL CATCHES helps you give the user a better error message
+// These are the another middlewares that we put at the end 
+// Express.json comes before of the route 
+
+// Express.json needs to get called first and then the route should get called 
+
+// Rather than these middelwares there is a ERROR BASE MIDDLEWARE
 
 //=======================================================================
 
