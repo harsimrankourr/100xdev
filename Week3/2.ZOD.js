@@ -5,14 +5,14 @@
 
 // ZOD is typescript-first schema validation with static type inference.
 
+// ZOD can be used independent of express 
+
 const express = require("express");
 const z = require("zod");
 const app = express();
 
-const schema = Zod.array(Zod.number());
-
-const schema = zod.object({
-    email : zod.string(),
+const schema = z.object({
+    email : z.string(),
     password: z.string(),
     country: z.literal("IN"). or(z.literal("US")), 
     kidneys: z.array(z.number())
@@ -37,3 +37,47 @@ app.post("/health-checkup", function (req, res) {
 });
 
 app.listen(3000);
+
+//==================================================================================
+
+/*
+const zod = require("zod");
+
+//if this is an array of number with atleast 1 input, return true, else return false 
+
+function validateInput(arr){
+
+    const schema = zod.object({
+        email : zod.string().email(),
+        password : zod.string().min(8)
+    })
+
+    const reponse = schema.safeParse(obj);
+    console.log(response);
+}
+
+validateInput([1,2,3]);
+
+*/
+
+// OR
+
+const zod = require("zod");
+
+//if this is an array of number with atleast 1 input, return true, else return false 
+
+function validateInput(arr){
+
+    const schema = zod.object({
+        email : zod.string().email(),
+        password : zod.string().min(8)
+    })
+
+    const reponse = schema.safeParse(obj);
+    console.log(response);
+}
+
+validateInput({
+    email: "hasrimarnkour48@gmail.com",
+    password: "123123123"
+});
