@@ -9,7 +9,14 @@ const express = require("express");
 const z = require("zod");
 const app = express();
 
-const schema = ZodAny.array(ZodAny.number());
+const schema = Zod.array(Zod.number());
+
+const schema = zod.object({
+    email : zod.string(),
+    password: z.string(),
+    country: z.literal("IN"). or(z.literal("US")), 
+    kidneys: z.array(z.number())
+})
 
 app.use(express.json());
 
