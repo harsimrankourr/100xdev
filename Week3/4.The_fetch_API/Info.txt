@@ -1,0 +1,9 @@
+/*
+Fetch is a modern, promise-based interface used to make asynchronous HTTP network request in the
+browser and Node.js environments.
+
+By default the request we send will be a GET request.
+We can add method to send POST or some other requests.
+
+Fetch is an asynchronous call
+*/

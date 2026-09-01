@@ -7,6 +7,8 @@
 
 // ZOD can be used independent of express 
 
+// ZOD will us blue print 
+
 const express = require("express");
 const z = require("zod");
 const app = express();
@@ -60,8 +62,9 @@ validateInput([1,2,3]);
 
 */
 
-// OR
+// OR ---------------------------------
 
+/*
 const zod = require("zod");
 
 //if this is an array of number with atleast 1 input, return true, else return false 
@@ -81,3 +84,35 @@ validateInput({
     email: "hasrimarnkour48@gmail.com",
     password: "123123123"
 });
+
+*/
+
+//OR ---------------------------------
+
+const zod = require("zod");
+
+//if this is an array of number with atleast 1 input, return true, else return false 
+
+function validateInput(arr){
+
+    const schema = zod.object({
+        email : zod.string().email(),
+        password : zod.string().min(8)
+    })
+
+    const reponse = schema.safeParse(obj);
+    console.log(response);
+}
+
+app.post("/login", function(req,res){
+    const response = validateInput(req.body)
+    if(!response.success){
+        res.json({
+            msg: "your inputs are invalid"
+        })
+        return;
+    }
+})
+
+// Coersion for permitives ->
+    // To pusbh someone to do something
