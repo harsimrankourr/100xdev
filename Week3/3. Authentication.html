@@ -1,0 +1,94 @@
+/*
+Whenever we set a password or email 
+app.get is called 
+and a token is generated 
+then token is stored in local memory 
+
+and whenever we hit the password
+that token is checked 
+
+Why that password is converted into a token?
+Why not password directly stored in the local memory?
+
+coz it is public thus token is generated 
+
+SOME CRYPTOGRAPHY JARGONS
+    - Hashing
+    - Encryption
+    - Json web token
+    - Local storage
+
+HASHING - Password hashing in javascript protects user credentials by turning a 
+        plain text password into an unreadable string brfore storing it to a database 
+
+        Sometimes we have the same password for multiple id's
+        so the same password have to same hash code 
+
+        one way 
+        doesnot need any password 
+        once get converted doen't get back
+
+ENCRYPTION - The process of converting sensitive user data into an unreadable cipher using an algorithm 
+            and a key , ensuring it remains confidential during log in and transmission
+
+            two way 
+            does require password 
+            con be convert again 
+
+JSON WEB TOKENS - it is the some input that converts into the output, anyone that convert it 
+                can see the input 
+
+                Technically it is the digital signature
+
+                 They take input as json
+                use case for web
+                it takes the data and create the token 
+                Very long string in the Authentication heading is actually the JWT
+
+                jwt.decode doesn't require password
+                but jwt.verify requires password
+
+LOCAL STORAGE - tokens are stored in the local storage of the browser
+*/
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <script>
+
+        // DOM
+        
+        //function getAnimalData() {
+        //  fetch("https://fakerapi.it/api/v1/persons")
+        //    .then(function (response) {
+        //     response.json()
+        //   .then(function(finalData){
+        //  console.log(finalData)
+        //})
+        // })
+        //}
+
+        //Using await 
+        async function getAnimalData() {
+            const response = await fetch("https://fakerapi.it/api/v1/persons",{
+                header:{
+                    "Authorization": localStorage.read("token")
+                }
+            })
+            const finalData = await response.json()
+            console.log(finalData);
+        }
+    </script>
+    <button onclick="getAnimalData()"> Get animal data</button>
+</body>
+
+</html>
