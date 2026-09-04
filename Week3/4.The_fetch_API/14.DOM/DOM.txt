@@ -1,0 +1,29 @@
+/*
+Document object model 
+
+A standard for how to get, change, add or delete HTML elements
+
+Javascript makes the Html page active and dynamic via the DOM
+
+Tree like structure 
+Language independent 
+
+What is a DOM?
+    - A programming interface for web documents 
+    - DOM isn't a programming language
+    - Represents the page so that the programers can change the document structure, style
+      and content
+    - The DOM is the tree like representation of the web page that gets loaded into the browser
+    - The DOM represents the documents as node and objects
+    - Without it the javascript language wouldn't have any model or notion of web pages,
+      HTML documents, SVG documents, and their component parts.
+    - Web API used to built websites
+
+Accessing the DOm
+    When you create a script whether inline in a <script> element or included in the web page,
+    you can immediately begin using the API for document or window object to manipulate 
+    the document itself
+
+    The DOM was designes to be independent of any particular programming language,
+    making the structural representation of the document available from a single, consistent API
+*/
