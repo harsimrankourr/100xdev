@@ -27,6 +27,8 @@
 
 //---------------------------------------------------------------------------------
 
+<!-- //Dynamic webpage -->
+
 <!-- <html>
 <script>
     function populateDive() {
@@ -55,7 +57,9 @@
 
 //---------------------------------------------------------------------------------
 
-<html>
+<!-- //Connecting frontend to the backend -->
+
+<!-- <html>
 <script>
     function populateDive() {
         const a = document.getElementById("firstNumber").value;
@@ -88,6 +92,56 @@
     <input onchange="populateDiv()" id="firstNumber" type="text" placeholder="First number"></input>
     <br></br>
     <input onchange="populateDiv()" id="secondNumber" type="text" placeholder="Second number"></input>
+    <br></br>
+    <button onclick="populateDiv()">Calculate sum</button>
+    <br></br>
+
+    <div id="finalSum"></div>
+</body>
+
+</html> -->
+
+//---------------------------------------------------------------------------------
+
+<!-- // Implement Debouncing
+
+//Anytime we call, create a clock and start it for 1000ms
+// if we get called again clear the old clock and start the new clock -->
+
+<html>
+<script>
+    // once 
+    let timeout;
+    function debouncePopulateDiv() {
+        //delay the call to populateDiv until i've not been called for 100ms
+        // and I've been called atleast once
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            populateDiv()
+        }, 1000);
+    }
+
+    // This is thw way how we saved so many unnecessary requests to the backend by introducing debouncing to our frontend
+
+    function populateDive() {
+        const a = document.getElementById("firstNumber").value;
+        const b = document.getElementById("secondNumber").value;
+        fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            .then(function (response) {
+
+                response.text()
+                    .then(function (ans) {
+                        document.getElementById("finalSum").innerHTML = ans;
+                    })
+            })
+    }
+
+</script>
+
+<body>
+    <input oninput="debouncePopulateDiv()" id="firstNumber" type="text" placeholder="First number"></input>
+    <br></br>
+    <input oninput="debouncePopulateDiv  ()" id="secondNumber" type="text" placeholder="Second number"></input>
     <br></br>
     <button onclick="populateDiv()">Calculate sum</button>
     <br></br>
