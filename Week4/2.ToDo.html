@@ -1,4 +1,6 @@
-<html>
+<!-- //Using Html -->
+
+<!-- <html>
 <script>
     function addTodo() {
         const title = document.getElementById("title").value;
@@ -20,55 +22,125 @@
     <button onclick="addTodo()">Add todo</button>
 </div>
 
-</html>
+</html> -->
 
 <!-- //------------------------------------------------------------------------------------ -->
-
+<!-- 
+Using Js -->
+<!-- 
 <!DOCTYPE html>
 <html>
 
 <head>
-  <script>
-    let globalId = 1;
+    <script>
+        let globalId = 1;
 
-    function markAsDone(todoId) {
-      const parent = document.getElementById(todoId);
-      parent.children[2].innerHTML = "Done!"
-    }
+        function markAsDone(todoId) {
+            const parent = document.getElementById(todoId);
+            parent.children[2].innerHTML = "Done!"
+        }
 
-    function createChild(title, description, id) {
-      const child = document.createElement("div");
-      const firstGrandParent = document.createElement("div");
-      firstGrandParent.innerHTML = title;
-      const secondGrandParent = document.createElement("div");
-      secondGrandParent.innerHTML = description;
-      const thirdGrandParent = document.createElement("button");
-      thirdGrandParent.innerHTML = "Mark as done";
-      thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
-      child.appendChild(firstGrandParent);
-      child.appendChild(secondGrandParent);
-      child.appendChild(thirdGrandParent)
-      child.setAttribute("id", id);
-      return child;
-    }
-    function addTodo() {
-      const title = document.getElementById("title").value;
-      const description = document.getElementById("description").value;
-      const parent = document.getElementById("todos");
+        function createChild(title, description, id) {
+            const child = document.createElement("div");
+            const firstGrandParent = document.createElement("div");
+            firstGrandParent.innerHTML = title;
+            const secondGrandParent = document.createElement("div");
+            secondGrandParent.innerHTML = description;
+            const thirdGrandParent = document.createElement("button");
+            thirdGrandParent.innerHTML = "Mark as done";
+            thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+            child.appendChild(firstGrandParent);
+            child.appendChild(secondGrandParent);
+            child.appendChild(thirdGrandParent)
+            child.setAttribute("id", id);
+            return child;
+        }
+        function addTodo() {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const parent = document.getElementById("todos");
+            //This is very similar to
 
-      parent.appendChild(createChild(title, description, globalId++));
-    }
-  </script>
+            //parent.appendChild(`<div>
+            //  <div>${title}</div>
+            //<div>${discription}</div>
+            //<button> Mark as done</button>
+            //</div>
+            //`);
+
+            //Just create child is just creating a DOM
+            // and in the 2nd funciton we just passs a string 
+
+            parent.appendChild(createChild(title, description, globalId++));
+        }
+    </script>
 </head>
 
 <body>
-  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
-  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
-  <button onclick="addTodo()">Add todo</button>
+    <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+    <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+    <button onclick="addTodo()">Add todo</button>
 
-  <div id="todos">
+    <div id="todos">
 
-  </div>
+    </div>
+</body>
+
+</html> -->
+
+<!-- //------------------------------------------------------------------------------------ -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+    <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+    <button onclick="addTodo()">Add todo</button>
+
+    <div id="todos">
+
+    </div>
+    <script>
+
+        function createChild(title, description, id) {
+            const child = document.createElement("div");
+            const firstGrandParent = document.createElement("div");
+            firstGrandParent.innerHTML = title;
+            const secondGrandParent = document.createElement("div");
+            secondGrandParent.innerHTML = description;
+            const thirdGrandParent = document.createElement("button");
+            thirdGrandParent.innerHTML = "Mark as done";
+            thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+            child.appendChild(firstGrandParent);
+            child.appendChild(secondGrandParent);
+            child.appendChild(thirdGrandParent)
+            child.setAttribute("id", id);
+            return child;
+        }
+        //state will always ba an array
+        //Every element of state would have a title, discription and id 
+
+        function updateAccToState(state) {
+            const parent = document.getElementById("todos");
+            parent.innerHTMl = "";
+            for (let i = 0; i < state.length; i++) {
+                const child = createChild(state[i].title, state[i].discription, state[i].id);
+                parent.appendChild(child);
+            }
+        }
+
+        updateDomAccToState([{
+            title: "go to gym",
+            discription: "go to gym from 5-7",
+            id: 1
+        }, {
+            title: "go to gym 2",
+            discription: "go to gym from 5-7",
+            id: 1
+        }])
+    </script>
 </body>
 
 </html>
