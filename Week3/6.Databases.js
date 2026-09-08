@@ -23,7 +23,7 @@ Using libraries!
 - Jsonwebtokens library lets us to create jets
 - Mongoose lets us connect to our database 
 */
-//-------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://harsimrankour48_db_user:X5LWDocMJgfTCSn1@cluster0.n5a7qcq.mongodb.net/myDatabase");
