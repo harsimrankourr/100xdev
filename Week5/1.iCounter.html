@@ -3,8 +3,11 @@
 <script>
     function onButtonPress() {
         const currentValue = document.getElementById("btn").innerHTML;
+        //split function lets the sentence into an array of elements
         console.log(currentValue.split(" "))
         const currentCounter = currentValue.split(" ")[1];
+        // 1+1 = 11
+        //just for getting 2 parseInt is used
         const newCounter = parseInt(currentCounter) + 1;
         document.getElementById("btn").innerHTML = "Counter " + newCounter;
     }
