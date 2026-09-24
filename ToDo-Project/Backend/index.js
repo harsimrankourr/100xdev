@@ -1,33 +1,81 @@
 const express = require("express");
-const { createTodo } = require("./types");
+const { createTodo, updateTodo } = require("./types");
+const Todo = require("./db");
 const app = express();
-
 app.use(express.json());
 
-app.post("/todo", function (req, res) {
+//---------------------------------------------------------------------------------
+// Create Todo
+//---------------------------------------------------------------------------------
+
+app.post("/todo", async function (req, res) {
+
     const createPayload = req.body;
-    const paredPayload = createTodo.safeParse(createPatload);
-    if (!parsePayload.success) {
+
+    // Validate input
+    const parsedPayload = createTodo.safeParse(createPayload);
+
+    if (!parsedPayload.success) {
         res.status(411).json({
             msg: "You sent the wrong inputs",
-        })
+        });
         return;
     }
-})
 
-app.get("/todos", function (req, res) {
+    //put it in mongodb
+    await Todo.create({
+        title: createPayload.title,
+        description: createPayload.description,
+        completed: false
+    });
 
-})
+    res.json({
+        msg: "Todo created"
+    });
+});
 
-app.put("/completed", function (req, res) {
+//------------------------------------------------------------------------------------
+// get all the Todos
+//-------------------------------------------------------------------------------------
+
+app.get("/todos", async function (req, res) {
+
+    const todos = await Todo.find({});
+
+    res.json({
+        todos: todos
+    });
+});
+
+//------------------------------------------------------------------------------------
+// Mark Todos as completed
+//------------------------------------------------------------------------------------
+
+app.put("/completed", async function (req, res) {
+
     const updatePayload = req.body;
+
+    // Validate input
     const parsedPayload = updateTodo.safeParse(updatePayload);
-    if(!parsedPayload.success){
+
+    if (!parsedPayload.success) {
         res.status(411).json({
-            msg: "You sent the wring inputs",
-        })
+            msg: "You sent the wrong inputs",
+        });
         return;
     }
-})
 
+    // update todo
+    await Todo.updateOne(
+        {
+            _id: req.body.id
+        }, {
+        completed: true
+    });
+    
+    res.json({
+        msg: "Todo marked as completed"
+    });
+});
 
+app.listen(3000);
