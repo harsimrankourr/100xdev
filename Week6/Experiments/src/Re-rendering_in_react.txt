@@ -1,0 +1,33 @@
+import { useState } from "react"
+
+function App() {
+  const [firstTitle, setFirstTitle] = useState("my name is harkirat");
+
+  function changeTitle() {
+    setFirstTitle("My name is " + Math.random())
+  }
+
+  return (
+    <div>
+      <button onClick={changeTitle}>Click me to change the title</button>
+      <Header title={firstTitle} />
+      <Header title="My name is raman" />
+    </div>
+  )
+}
+
+function Header({title}) {
+  return <div>
+    {title}
+  </div>
+}
+
+export default App
+
+// But in this there are more number of re renders 
+
+// Anytime a parent re-render, all children will render irrespective of if this child has actually used this title or not?
+
+// How would we prevents these re-renders?
+
+//  - Push the state down
