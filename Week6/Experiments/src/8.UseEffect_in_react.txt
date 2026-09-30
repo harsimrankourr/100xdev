@@ -1,14 +1,38 @@
 
-import { useEffect } from "react"
+// import { useEffect } from "react"
 
+// function App() {
+
+//     useEffect(function () {
+//         alert("hi")
+//     }, [])
+
+//     return <div>
+//         hi there
+//     </div>
+
+// }
+
+// export default App;
+
+//----------------------------------------------------------------
+
+import { useEffect } from "react";
+import { useState } from "react"
+
+//real wrapper
 function App() {
+    const [counter, setCounter] = useState(0)
 
-    useEffect(function () {
-        alert("hi")
-    }, [])
+
+    useEffect(() => {
+        alert(counter);
+    }, [counter])
 
     return <div>
-        hi there
+        <button onClick={() => {
+            setCounter(counter++);
+        }}>Increase count</button>
     </div>
 
 }
