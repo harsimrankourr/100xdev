@@ -1,37 +1,29 @@
 
-import React, {Fragment} from "react"
-import { useState } from "react"
-
 function App() {
-  const [todos, setTodos] = useState([{
-    id: 1,
-    title: "Go to gym",
-    description: "Need to hit the gym from 7-9PM"
-  }, {
-    id: 2,
-    title: "Go to Clas",
-    description: "Need to go to the class from 4-7 PM"
-  }, {
-    id: 3,
-    title: "Eat foor",
-    description: "Need to eat food from 2-4 PM"
-  }])
-  return (
-    <div>
-      {todos.map(todo => <Todo key ={todo.id} title={todo.title} description={todo.description} />)}
+    return <div>
+        <CardWrapper innerComponent = {<TextComponent/>} />
+        <CardWrapper innerComponent = {<TextComponent2/>} />
     </div>
-  )
 }
 
-function Todo({title, description}) {
-  return <div>
-    <h1>
-      {title}
-    </h1>
-    <h4>
-      {description}
-    </h4>
-  </div>
+function CardWrapper({innerComponent}) {
+    // create a div which has a border (hint: the way to create a border is : "2px solid black")
+    // and inside the div, render the prop
+    return <div style = {{border: "2px solid black", padding: 20}}>
+        {innerComponent}
+    </div>
 }
 
+function TextComponent() {
+    return <div>
+        hi there
+    </div>
+}
+
+
+function TextComponen2t() {
+    return <div>
+        hi there 2
+    </div>
+}
 export default App
