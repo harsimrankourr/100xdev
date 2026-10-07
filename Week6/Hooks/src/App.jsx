@@ -1,56 +1,24 @@
-// import { memo, useState } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
-// function App() {
-//   const [count, setCount] = useState(0)
+function useTodos() {
+    const [todos, setZTodos] = useState([]);
 
-//   // Native function
-//   function logSomething() {
-//     console.log("child clicked")
-//   }
-
-//   return <div>
-//     <ButtonComponent onClick={logSomething} />
-//     <button onClick={() => {
-//       setCount(count + 1);
-//     }}>Click me {count}</button>
-//   </div>
-// }
-
-// const ButtonComponent = memo(({inputFunction}) => {
-//   console.log("child render")
-
-//   return <div>
-//     <button onClick={inputFunction}>Button clicked</button>
-//   </div>
-// })
-
-// export default App
-
-//-------------------------------------------------------------------
-
-import { memo, useState } from "react";
-
-function App() {
-    const [count, setCount] = useState(0)
-
-    const inputFunction = useCallback(() => {
-        console.log("hi there");
+    useEffect(() => {
+        axios.get("")
+            .then((res) => {
+                setZTodos(res.data.todos)
+            })
     }, [])
 
+    return todos;
+}
+
+function App() {
+
     return <div>
-        <ButtonComponent inputFunction={inputFunction} />
-        <button onClick={() => {
-            setCount(count + 1);
-        }}>Click me {count}</button>
+        {todos}
     </div>
 }
 
-const ButtonComponent = memo(({ inputFunction }) => {
-    console.log("child render")
-
-    return <div>
-        <button onClick={inputFunction}>Button clicked</button>
-    </div>
-})
-
-export default App
+export default App;
