@@ -1,24 +1,21 @@
-import { useState } from "react";
-import { useEffect } from "react";
-
-function useTodos() {
-    const [todos, setZTodos] = useState([]);
-
-    useEffect(() => {
-        axios.get("")
-            .then((res) => {
-                setZTodos(res.data.todos)
-            })
-    }, [])
-
-    return todos;
-}
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 function App() {
+  const divRef = useRef();
 
-    return <div>
-        {todos}
+  useEffect(() => {
+    setTimeout(() => {
+      divRef.current.innerHTML = "10"
+    }, 5000);
+  }, [])
+
+  const incomeTax = 20000;
+
+  return (
+    <div>
+        hi there, your income tax returns are <div ref={divRef}>{incomeTax}</div>
     </div>
+  )
 }
 
-export default App;
+export default App

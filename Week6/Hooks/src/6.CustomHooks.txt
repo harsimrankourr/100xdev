@@ -1,0 +1,23 @@
+import { useState } from "react";
+import { useEffect } from "react";
+
+function useTodos() {
+    const [todos, setZTodos] = useState([]);
+
+    useEffect(() => {
+        axios.get("")
+            .then((res) => {
+                setZTodos(res.data.todos)
+            })
+    }, [])
+
+    return todos;
+}
+
+function App() {
+
+    return <div>
+        {todos}
+    </div>
+}
+
