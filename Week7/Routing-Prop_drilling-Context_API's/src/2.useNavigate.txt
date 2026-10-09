@@ -1,19 +1,26 @@
+// useNavigate hooks lets us to navigate from one route to another
+// It does not doing the hard re load of the page 
+// It simply changing the route by keeping the same client bundle and changing the page
+// because the route has changed
 
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import './App.css'
-const Dashboard = React.lazy(() => import('./components/Dashboard'))
-const Landing = React.lazy(() => import('./components/Landing'))
+import { Dashboard } from './components/Dashboard'
+import { Landing } from './components/Landing'
 
 
 function App() {
-    // Suspense API
+
+    // Whenever we are using useNavigate hook we have to make sure we are suing it in a component
+    // inside the BrowserRouter
+    // We can't use useNavigate hook ina component that is outside the bbrowserRouter
     return (
         <div>
             <BrowserRouter>
                 <Appbar />
                 <Routes>
-                    <Route path="/dashboard" element={<Suspense fallback={"loading..."}><Dashboard /></Suspense>} />
-                    <Route path="/" element={<Suspense fallback={"loading..."}><Landing /></Suspense>} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/" element={<Landing />} />
                 </Routes>
             </BrowserRouter>
         </div>
